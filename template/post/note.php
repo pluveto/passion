@@ -37,7 +37,7 @@
         <?php $this->need('comments.php') ?>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default"></script>
-    <script type="text/x-mathjax-config">
+    <script type="text/x-mathjax-config"> 
         MathJax.Hub.Config({
 			showProcessingMessages: false,
 			messageStyle: "none",
