@@ -1,0 +1,271 @@
+.home-toc h2:after {
+    margin: 0 !important;
+}
+
+.home-toc h1,
+.home-toc h2,
+.home-toc h3 {
+    text-align: left !important;
+}
+
+.ani-underline {
+    display: inline;
+    position: relative;
+    overflow: hidden;
+}
+
+.ani-underline:hover {
+    text-decoration: no-underline;
+}
+
+.ani-underline:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 0;
+    bottom: -5px;
+    background: #000;
+    height: 2px;
+    transition-property: width;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.ani-underline:hover:after,
+.ani-underline:focus:after,
+.ani-underline:active:after {
+    left: 0;
+    right: auto;
+    width: 100%;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.min-width-5em {
+    min-width: 5em;
+}
+
+@media (max-width: 640px) {
+    .sm-hidden {
+        display: none;
+    }
+}
+
+.pin-item {
+    color: #bbb;
+    border: #ccc 1px solid;
+    border-radius: 2px;
+    padding: 1em;
+    margin: .2em;
+}
+
+.pin-item:hover {
+    transition: color 0.5s, border 0.5s;
+    color: #333;
+    border: #333 1px solid;
+    border-radius: 2px;
+}
+
+ol .br-item:not(:first-child)::before {
+    width: 8px;
+    height: 16px;
+    background-size: 6px 16px;
+    background-repeat: no-repeat;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI4cHgiIGhlaWdodD0iMThweCIgdmlld0JveD0iMCAwIDggMTgiIHhtbDpzcGFjZT0icHJlc2VydmUiPgoJPHBhdGggZD0iTTEuMjksMC45OEw3LjUsOWwtNi4yMSw4LjAxbC0wLjY4LTAuNTRMNi40Miw5bC01LjgtNy40OUwxLjI5LDAuOTh6IiBmaWxsPSIjZDZkNmQ2IiAvPgo8L3N2Zz4K);
+    margin: 0 8px;
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -1px;
+}
+
+.footer {
+    border-top: #ccc .3px solid;
+    color: #1d1d1d;
+    width: 100%;
+    min-height: 80px;
+    padding: 3em 0 25px;
+    font-size: .8em;
+}
+
+.footer h5 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+.footer .list-item {
+    margin-right: 1em;
+}
+
+.footer ol,
+.footer ul {
+    margin-bottom: 0;
+}
+
+.footer-copy {
+    font-size: .8em;
+    color: #8e8e8e;
+}
+
+
+/* ------------------
+ * Comment list
+ * --------------- */
+
+#comments {
+    padding-top: 15px;
+}
+
+.comment-list,
+.comment-list ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.comment-list li {
+    padding: 14px;
+    margin-top: 10px;
+    border: 1px solid #EEE;
+}
+
+.comment-list li.comment-level-odd {
+    background: #F6F6F3;
+}
+
+.comment-list li.comment-level-even {
+    background: #FFF;
+}
+
+.comment-list li.comment-by-author {
+    background: #FFF9E8;
+}
+
+.comment-list li .comment-reply {
+    text-align: right;
+    font-size: .92857em;
+}
+
+.comment-meta a {
+    color: #999;
+    font-size: .92857em;
+}
+
+.comment-author {
+    display: block;
+    margin-bottom: 3px;
+    color: #444;
+}
+
+.comment-author .avatar {
+    float: left;
+    margin-right: 10px;
+}
+
+.comment-author cite {
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+/* Comment reply */
+
+.comment-list .respond {
+    margin-top: 15px;
+    border-top: 1px solid #EEE;
+}
+
+.respond .cancel-comment-reply {
+    float: right;
+    margin-top: 15px;
+    font-size: .92857em;
+}
+
+#comment-form label {
+    display: block;
+    margin-bottom: .5em;
+    font-weight: bold;
+}
+
+#comment-form .required:after {
+    content: " *";
+    color: #C00;
+}
+
+
+/* Page nav */
+
+.page-navigator {
+    list-style: none;
+    margin: 25px 0;
+    padding: 0;
+    text-align: center;
+}
+
+.page-navigator li {
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.page-navigator a {
+    display: inline-block;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.page-navigator a:hover {
+    background: #EEE;
+    text-decoration: none;
+}
+
+.page-navigator .current a {
+    color: #444;
+    background: #EEE;
+}
+
+.post-desc {
+    padding: 1em;
+    font-size: smaller;
+    color: #777;
+}
+
+.close-page a {
+    padding-top: .3em;
+    color: #666;
+    float: right;
+    font-size: 2em;
+    font-weight: lighter;
+}
+
+.close-page a:hover {
+    color: #111;
+    transition-property: color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.back-link {
+    text-decoration: underline;
+    border: 1px solid;
+}
+
+@media (min-width: 640px) {
+    .back-link {
+        justify-content: start;
+        margin-left: -5em;
+    }
+}
+
+.MathJax_SVG {
+    padding: 0 0.3em!important;
+    vertical-align: middle
+}
+
+.comment-content {
+    margin-left: 58px;
+    ;
+}
