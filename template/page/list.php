@@ -23,7 +23,7 @@
 <body class=" font-serif">
 	<p></p>
 	<div class="container home-toc" id="write">
-		<h1><a href="<?php $this->options->siteUrl()?>"><?php $this->options->title(); ?></a></h1>
+		<h1><a href="<?php $this->options->siteUrl() ?>"><?php $this->options->title(); ?></a></h1>
 		<p><?php $this->options->description(); ?></p>
 		<h2><?php echo $this->type ?></h2>
 		<ul>
@@ -45,10 +45,10 @@
 			}
 			?>
 		</ul>
-        <?php
-        $count = _countUnderArticleTemplate($this->typeId);
+		<?php
+		$count = _countUnderArticleTemplate($this->typeId);
 		$this->setTotal($count);
-        $this->parameter->pageSize = min($count, 5);
+		$this->parameter->pageSize = min($count, 5);
 		$this->parameter->type = 'index';
 		$this->options->index = $this->permalink . "?a=";
 		$this->pageNav('&laquo; 前一页', '后一页 &raquo;');
@@ -59,6 +59,15 @@
 			Powered by Typecho. Theme “Passion” by Pluveto.
 		</div>
 	</div>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+        extensions: ["tex2jax.js", "TeX/AMSmath.js"],
+        jax: ["input/TeX", "output/SVG"],
+    })
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default"></script>
+
 </body>
 
 </html>
