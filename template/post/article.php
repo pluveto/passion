@@ -25,26 +25,6 @@
     <div class="container">
         <?php $this->need('comments.php') ?>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-			showProcessingMessages: false,
-			messageStyle: "none",
-			extensions: ["tex2jax.js","TeX/mediawiki-texvc.js"],
-			jax: ["input/TeX", "output/SVG"],
-			tex2jax: {
-				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-				displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
-				ignoreClass:"comment-content"
-			},
-			"HTML-CSS": {
-				availableFonts: ["STIX","TeX"],
-				showMathMenu: false
-			}
-		});
-		MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-		</script>
 </body>
 
 </html>

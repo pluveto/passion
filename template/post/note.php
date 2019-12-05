@@ -36,6 +36,15 @@
     <div class="container">
         <?php $this->need('comments.php') ?>
     </div>
+    <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+        extensions: ["tex2jax.js", "TeX/AMSmath.js"],
+        jax: ["input/TeX", "output/SVG"],
+    })
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=default"></script>
+
 </body>
 
 </html>
