@@ -57,8 +57,11 @@ a {
     color: #bbb;
     border: #ccc 1px solid;
     border-radius: 2px;
-    padding: 1em;
-    margin: .2em;
+}
+
+.friends-avatar{
+    height: 96px;
+    width: 96px;
 }
 
 .pin-item:hover {

@@ -133,19 +133,30 @@ function _getByArticleTemplate($template, $page, $perpage, $except = 0)
             ->order('created', Typecho_Db::SORT_DESC)
     );
 
+    return rowToPosts($rows);
+}
+function rowToPosts($rows){
+    
     $posts = [];
 
     foreach ($rows as $row) {
-        $posts[] = Typecho_Widget::widget(
+        
+        $tmp = Typecho_Widget::widget(
             'Widget_Archive@post_' . $row['cid'],
             "type=post",
             "cid=" . $row['cid']
         );
+        if($tmp->cid == NULL){
+            var_dump($row['cid']);
+        }
+        $posts[] = $tmp;
     }
+    
     return $posts;
 }
 function getArticles($page = 1, $perpage = 5, $except = -1)
 {
+    return _getByArticleTemplate('article', $page, $perpage);
 
     $db = Typecho_Db::get();
     $prefix = $db->getPrefix();
@@ -175,16 +186,7 @@ EOT;
     */
 
     $rows = $db->query($query);
-    $posts = [];
-
-    foreach ($rows as $row) {
-        $posts[] = Typecho_Widget::widget(
-            'Widget_Archive@post_' . $row['cid'],
-            "type=post",
-            "cid=" . $row['cid']
-        );
-    }
-    return $posts;
+    return rowToPosts($rows);    
 }
 function getChineseDate($date)
 {
@@ -195,7 +197,9 @@ function getChineseDate($date)
 }
 function getDiarys($page = 1, $perpage = 5, $except = -1)
 {
-    return _getByArticleTemplate('diary', $page, $perpage, $except);
+    $got = _getByArticleTemplate('diary', $page, $perpage, $except);
+    //var_dump($got);
+    return $got;
 }
 function getPins($page = 1, $perpage = 5)
 {

@@ -32,6 +32,9 @@
             <div class="justify-end">by <?php $this->author() ?> on <?php $this->date("M j, Y") ?></div>
         </div>
         <?php $this->content(); ?>
+        <?php if($this->user->hasLogin()):?>
+            <a href="<?php $this->options->siteUrl();?>admin/write-post.php?cid=<?php echo $this->cid;?>">编辑</a>
+        <?php endif;?>
     </div>
     <div class="container">
         <?php $this->need('comments.php') ?>

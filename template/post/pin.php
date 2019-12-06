@@ -31,6 +31,9 @@
         <div class="" style="user-select:none;font-size:5em;font-weight:bold;">“</div>
         <div class="" style="padding: 0 2em;"><?php $this->content(); ?></div>
         <div class="text-right font-sans" style="font-size: small; color:#bbb;">By <i><?php $this->author(); ?></i> on <?php $this->date("Y-m-j H:i:s"); ?></div>
+        <?php if($this->user->hasLogin()):?>
+            <a href="<?php $this->options->siteUrl();?>admin/write-post.php?cid=<?php echo $this->cid;?>">编辑</a>
+        <?php endif;?>
     </div>
 
     <div class="container">

@@ -52,7 +52,8 @@ $notes = getNotes(1, 5);
 		<h2>日记</h2>
 		<ul>
 			<?php
-			foreach ($diaries as $single) { ?>
+			foreach ($diaries as $single) { 
+				?>
 				<li>
 					<div class="flex">
 						<div class="flex-1">
@@ -70,9 +71,11 @@ $notes = getNotes(1, 5);
 			<?php
 			foreach ($pins as $single) { ?>
 				<li class="pin-item">
-					<a class="ani-underline  cursor-default " href="<?php $single->permalink(); ?>">
-						<div class="md-rawblock"><?php $single->content(); ?></div>
-					</a>
+					<div class="m-4">
+						<a class="ani-underline cursor-default " href="<?php $single->permalink(); ?>">
+							<div class="md-rawblock"><?php $single->content(); ?></div>
+						</a>
+					</div>
 				</li>
 			<?php
 			}
@@ -90,20 +93,24 @@ $notes = getNotes(1, 5);
 			?>
 		</ul>
 		<h2>其他</h2>
-		<div class="flex pb-8 flex-wrap">
-			<a class="cursor-default w-1/2" href="<?php $this->options->adminUrl(); ?>">
+		<div class="flex pb-8 flex-wrap" style="margin:0 -15px;">
+			<a class="cursor-default w-1/2" style=" padding:0 15px;" href="<?php $this->options->adminUrl(); ?>">
 				<div class="pin-item md-rawblock">
-					<b>后台</b>
-					<div class="title">进入管理后台</div>
+					<div class="m-4">
+						<b>后台</b>
+						<div class="title">进入管理后台</div>
+					</div>
 				</div>
 			</a>
 			<?php
 			$pages = getPages();
 			foreach ($pages as $single) { ?>
-				<a class="cursor-default w-1/2" href="<?php $single->permalink(); ?>">
+				<a class="cursor-default w-1/2" style=" padding:0 15px;" href="<?php $single->permalink(); ?>">
 					<div class="pin-item md-rawblock">
-						<b><?php $single->title(); ?></b>
-						<div class="title"><?php echo  $single->fields->pageDescription; ?></div>
+						<div class="m-4">
+							<b><?php $single->title(); ?></b>
+							<div class="title"><?php echo  $single->fields->pageDescription; ?></div>
+						</div>
 					</div>
 				</a>
 			<?php
